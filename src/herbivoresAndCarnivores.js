@@ -27,9 +27,7 @@ class Carnivore extends Animal {
   bite(animal) {
     if (!animal.hidden && animal instanceof Herbivore) {
       if (animal.health === 50) {
-        const deletedAnimalIndex = Animal.alive.indexOf(animal);
-
-        Animal.alive.splice(deletedAnimalIndex, 1);
+        Animal.alive.filter((item) => item.health !== 50);
       } else {
         animal.health -= 50;
       }
